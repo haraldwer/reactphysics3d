@@ -2024,7 +2024,7 @@ the standard output:
 DefaultLogger* logger = physicsCommon.createDefaultLogger();
 
 // Log level (warnings and errors)
-uint logLevel = static_cast<uint>(static_cast<uint>(Logger::Level::Warning) | static_cast<uint>(Logger::Level::Error);
+uint logLevel = static_cast<uint>(static_cast<uint>(Logger::Level::Warning) | static_cast<uint>(Logger::Level::Error));
 
 // Output the logs into an HTML file
 logger->addFileDestination("rp3d_log_" + name + ".html", logLevel, DefaultLogger::Format::HTML);
