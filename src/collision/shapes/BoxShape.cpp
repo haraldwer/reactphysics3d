@@ -144,8 +144,10 @@ bool BoxShape::raycast(const Ray& ray, RaycastInfo& raycastInfo, Collider* colli
             tMin = t;
         }
         
-        localHitPoint = ray.point1 + tMin * rayDirection;
-        normalDirection = (localHitPoint - contactPointOnBox).getUnit();
+        // From sphere to box
+        Vector3 sphereHitPoint = ray.point1 + tMin * rayDirection;
+        normalDirection = (sphereHitPoint - contactPointOnBox).getUnit();
+        localHitPoint = contactPointOnBox;
     }
     
     raycastInfo.body = collider->getBody();
