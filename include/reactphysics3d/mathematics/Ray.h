@@ -50,14 +50,17 @@ struct Ray {
         /// Second point of the ray in world-space
         Vector3 point2;
 
+        /// Radius of the ray in world-space
+        decimal radius;
+
         /// Maximum fraction value
         decimal maxFraction;
 
         // -------------------- Methods -------------------- //
 
         /// Constructor with arguments
-        Ray(const Vector3& p1, const Vector3& p2, decimal maxFrac = decimal(1.0))
-           : point1(p1), point2(p2), maxFraction(maxFrac) {
+        Ray(const Vector3& p1, const Vector3& p2, decimal radius = decimal(0.0), decimal maxFrac = decimal(1.0))
+           : point1(p1), point2(p2), radius(radius), maxFraction(maxFrac) {
 
         }
 };
