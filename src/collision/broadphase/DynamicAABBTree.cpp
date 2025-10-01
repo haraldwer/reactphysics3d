@@ -708,7 +708,7 @@ void DynamicAABBTree::raycast(const Ray& ray, DynamicAABBTreeRaycastCallback& ca
         const TreeNode* node = mNodes + nodeID;
 
         // Test if the ray intersects with the current node AABB
-        if (!node->aabb.testRayIntersect(ray.point1, rayDirectionInverse, maxFraction)) continue;
+        if (!node->aabb.testRayIntersect(ray.point1, rayDirectionInverse, ray.radius, maxFraction)) continue;
 
         // If the node is a leaf of the tree
         if (node->isLeaf()) {
