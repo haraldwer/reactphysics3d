@@ -865,10 +865,10 @@ class TestRaycast : public Test {
             mWorld->raycast(ray1, &mCallback);
             rp3d_test(!mCallback.isHit);
             mCallback.reset();
-            mWorld->raycast(Ray(ray1.point1, ray1.point2, decimal(0.01)), &mCallback);
+            mWorld->raycast(Ray(ray1.point1, ray1.point2, decimal(0.0), decimal(0.01)), &mCallback);
             rp3d_test(!mCallback.isHit);
             mCallback.reset();
-            mWorld->raycast(Ray(ray1.point1, ray1.point2, decimal(100.0)), &mCallback);
+            mWorld->raycast(Ray(ray1.point1, ray1.point2, decimal(0.0), decimal(100.0)), &mCallback);
             rp3d_test(!mCallback.isHit);
 
             rp3d_test(!mCapsuleBody->raycast(ray2, raycastInfo3));
